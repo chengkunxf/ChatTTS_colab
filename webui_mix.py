@@ -50,6 +50,7 @@ chat = load_chat_tts_model(source=args.source, local_path=args.local_path)
 # 抽卡的最大数量
 max_audio_components = 10
 
+
 # 加载
 def load_seeds():
     with open(SAVED_SEEDS_FILE, "r") as f:
@@ -302,6 +303,42 @@ def generate_tts_audio_stream(text_file, num_seeds, seed, speed, oral, laugh, bk
                               top_P,
                               top_K, roleid=None, refine_text=True, speaker_type="seed", pt_file=None,
                               stream_mode="fake"):
+    num_seeds = 1
+    seed = 0
+    speed = 2
+    oral = 2
+    laugh = 0
+    bk = 4
+    min_length = 80
+    batch_size = 3
+    temperature = 0.1
+    top_P = 0.7
+    top_K = 20
+    roleid = "1"
+    refine_text = True
+    speaker_type = "seed"
+    pt_file = "seed_1315_restored_emb.pt"
+    stream_mode = "fake"
+
+    # 打印参数值
+    print(f"text_file: {text_file}")
+    print(f"num_seeds: {num_seeds}")
+    print(f"seed: {seed}")
+    print(f"speed: {speed}")
+    print(f"oral: {oral}")
+    print(f"laugh: {laugh}")
+    print(f"bk: {bk}")
+    print(f"min_length: {min_length}")
+    print(f"batch_size: {batch_size}")
+    print(f"temperature: {temperature}")
+    print(f"top_P: {top_P}")
+    print(f"top_K: {top_K}")
+    print(f"roleid: {roleid}")
+    print(f"refine_text: {refine_text}")
+    print(f"speaker_type: {speaker_type}")
+    print(f"pt_file: {pt_file}")
+    print(f"stream_mode: {stream_mode}")
+
     from utils import split_text, replace_tokens, restore_tokens
     from tts_model import deterministic
     if seed in [0, -1, None]:
