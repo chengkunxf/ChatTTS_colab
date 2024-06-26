@@ -316,7 +316,7 @@ def generate_tts_audio_stream(text_file, num_seeds, seed, speed, oral, laugh, bk
     top_K = 20
     roleid = "1"
     refine_text = True
-    speaker_type = "seed"
+    speaker_type = "pt"
     pt_file = "seed_1315_restored_emb.pt"
     stream_mode = "fake"
 
