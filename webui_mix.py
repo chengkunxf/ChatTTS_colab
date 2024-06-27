@@ -259,7 +259,7 @@ def generate_tts_audio(text_file, num_seeds, seed, speed, oral, laugh, bk, min_l
                        top_K, roleid=None, refine_text=True, speaker_type="seed", pt_file=None, progress=gr.Progress()):
     num_seeds = 1
     seed = 0
-    speed = 1
+    speed = 2
     oral = 2
     laugh = 0
     bk = 4
@@ -341,7 +341,7 @@ def generate_tts_audio_stream(text_file, num_seeds, seed, speed, oral, laugh, bk
                               stream_mode="fake"):
     num_seeds = 1
     seed = 0
-    speed = 1
+    speed = 2
     oral = 2
     laugh = 0
     bk = 4

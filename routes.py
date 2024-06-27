@@ -135,7 +135,7 @@ def generate_tts_audio():
     text_file = data.get("text_file", "")
     num_seeds = 1
     seed = 0
-    speed = 1
+    speed = 2
     oral = 2
     laugh = 0
     bk = 4
