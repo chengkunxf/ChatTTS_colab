@@ -44,6 +44,9 @@ app = Flask(__name__)
 # 设置静态文件缓存过期时间
 app.send_file_max_age_default = timedelta(seconds=1)
 
+# 顺序不能改变，必须完成 Flask 的初始化
+from routes import *
+
 if __name__ == '__main__':
     os.makedirs("./logs", exist_ok=True)
 
