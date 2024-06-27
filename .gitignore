@@ -165,3 +165,5 @@ test_data/
 *.wav
 saved_seeds/
 models/
+*.mp3
+tts_websocket_demo.py
