@@ -4,7 +4,7 @@ import random
 
 import numpy as np
 import torch
-from flask import request, jsonify
+from flask import request, jsonify, send_from_directory
 
 from app import app, chat
 from tts_model import clear_cuda_cache
@@ -209,3 +209,8 @@ def generate_tts_audio():
         return output_files
     except Exception as e:
         raise e
+
+
+@app.route('/output/<path:filename>', methods=['GET'])
+def download_file(filename):
+    return send_from_directory('output', filename)
