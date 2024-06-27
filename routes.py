@@ -126,7 +126,7 @@ def generate_tts_audio_stream():
             yield 24000, combined_audio[0]
 
 
-@app.route('/tss_audio', methods=['POST'])
+@app.route('/tts_audio', methods=['POST'])
 def generate_tts_audio():
     if request.content_type != 'application/json':
         return jsonify({"error": "Content-Type must be application/json"}), 400
