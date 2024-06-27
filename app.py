@@ -1,7 +1,7 @@
 import os
 from logging.handlers import TimedRotatingFileHandler
 
-from flask import Flask
+from flask import Flask, request, Response, jsonify
 from gevent import pywsgi
 from datetime import timedelta
 import logging
@@ -55,8 +55,10 @@ def index():
     return 'Hell Flask'
 
 
-@app.route('/tts')
-def generate_tts_audio_stream(text_file):
+@app.route('/tts', methods=['POST'])
+def generate_tts_audio_stream():
+    data = request.json
+    text_file = data.get("text_file", "")
     num_seeds = 1
     seed = 0
     speed = 2
